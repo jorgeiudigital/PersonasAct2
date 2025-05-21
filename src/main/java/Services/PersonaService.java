@@ -11,10 +11,10 @@ public class PersonaService {
     private static Persona[] personas = new Persona[CANTIDAD_PERSONAS];
     private Scanner sc = new Scanner(System.in);
 
-    public void capturarPersona(int cantidad) {
+    public void capturarPersonas() {
         // Implementación del método para capturar una persona
 
-        for (int i = 1; i <= cantidad; i++) {
+        for (int i = 0; i < CANTIDAD_PERSONAS; i++) {
             System.out.print("Ingrese el nombre de la persona: ");
             String nombre = sc.nextLine();
 
@@ -30,18 +30,22 @@ public class PersonaService {
 
             Persona p = new Persona(nombre, apellido, genero, edad);
             personas[i] = p;
+
+            System.out.println("");
+            System.out.println("Persona capturada");
+            System.out.println("Ingrese la siguiente persona");
         }
     }
 
     public void returnNombreGenero() {
-        for (int i = 1; i <= CANTIDAD_PERSONAS; i++) {
+        for (int i = 0; i < CANTIDAD_PERSONAS; i++) {
             System.out.println("Nombre: " + personas[i].getNombre() + ", Genero: " + personas[i].getGenero());
         }
     }
 
     public double returnPromedioEdad() {
         double suma = 0;
-        for (int i = 1; i <= CANTIDAD_PERSONAS; i++) {
+        for (int i = 0; i < CANTIDAD_PERSONAS; i++) {
             suma += personas[i].getEdad();
         }
         return suma / CANTIDAD_PERSONAS;
@@ -50,7 +54,7 @@ public class PersonaService {
 
     public void cantidadMaculino() {
         int contador = 0;
-        for (int i = 1; i <= CANTIDAD_PERSONAS; i++) {
+        for (int i = 0; i < CANTIDAD_PERSONAS; i++) {
             if (personas[i].getGenero().equalsIgnoreCase("masculino")) {
                 contador++;
             }
@@ -61,7 +65,7 @@ public class PersonaService {
 
     public void cantidadFemenino() {
         int contador = 0;
-        for (int i = 1; i <= CANTIDAD_PERSONAS; i++) {
+        for (int i = 0; i < CANTIDAD_PERSONAS; i++) {
             if (personas[i].getGenero().equalsIgnoreCase("femenino")) {
                 contador++;
             }
