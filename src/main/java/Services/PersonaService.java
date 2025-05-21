@@ -6,7 +6,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class PersonaService {
-    private List<Persona> personas = new ArrayList<>();
+
+    private static final int CANTIDAD_PERSONAS = 5;
+    private static Persona[] personas = new Persona[CANTIDAD_PERSONAS];
     private Scanner sc = new Scanner(System.in);
 
     public void capturarPersona(int cantidad) {
@@ -27,7 +29,14 @@ public class PersonaService {
             sc.nextLine(); // Consumir el salto de línea
 
             Persona p = new Persona(nombre, apellido, genero, edad);
-            personas.add(p);
+            personas[i] = p;
         }
+    }
+
+    public void returnNombreGenero(){
+        for (int i = 1; i <= CANTIDAD_PERSONAS; i++) {
+            System.out.println("Nombre: " + personas[i].getNombre() + ", Genero: " + personas[i].getGenero());
+        }
+
     }
 }
