@@ -12,7 +12,6 @@ public class PersonaService {
     private Scanner sc = new Scanner(System.in);
 
     public void capturarPersonas() {
-        // Implementación del método para capturar una persona
 
         for (int i = 0; i < CANTIDAD_PERSONAS; i++) {
             System.out.print("Ingrese el nombre de la persona: ");
@@ -26,7 +25,7 @@ public class PersonaService {
 
             System.out.print("Ingrese la edad de la persona: ");
             int edad = sc.nextInt();
-            sc.nextLine(); // Consumir el salto de línea
+            sc.nextLine();
 
             Persona p = new Persona(nombre, apellido, genero, edad);
             personas[i] = p;
@@ -44,7 +43,7 @@ public class PersonaService {
     }
 
     public double returnPromedioEdad() {
-        double suma = 0;
+        double suma = 0; // sumatorio
         for (int i = 0; i < CANTIDAD_PERSONAS; i++) {
             suma += personas[i].getEdad();
         }

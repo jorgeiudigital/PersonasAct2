@@ -1,13 +1,13 @@
 package model;
 
 public class Persona {
-
+        //Atributos
         private String nombre;
         private String apellido;
         private String genero;
         private int edad;
 
-        // Constructor
+        // Constructor para iniciailizar los atrubutos
         public Persona (String nombre, String apellido, String genero, int edad) {
             this.nombre = nombre;
             this.apellido = apellido;
@@ -15,17 +15,38 @@ public class Persona {
             this.edad = edad;
         }
 
-        // Datos necesarios
+        // Getters y Setters
         public String getNombre() {
-            return nombre;
+        return nombre;
+        }
+
+        public void setNombre(String nombre) {
+        this.nombre = nombre;
+        }
+
+        public String getApellido() {
+        return apellido;
+        }
+
+        public void setApellido(String apellido) {
+        this.apellido = apellido;
         }
 
         public String getGenero() {
-            return genero;
+        return genero;
+        }
+
+        public void setGenero(String genero) {
+        this.genero = genero;
         }
 
         public int getEdad() {
-            return edad;
+        return edad;
+        }
+
+        public void setEdad(int edad) {
+        this.edad = edad;
+        }
 }
-    }
+
 
