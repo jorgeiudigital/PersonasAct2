@@ -33,10 +33,19 @@ public class PersonaService {
         }
     }
 
-    public void returnNombreGenero(){
+    public void returnNombreGenero() {
         for (int i = 1; i <= CANTIDAD_PERSONAS; i++) {
             System.out.println("Nombre: " + personas[i].getNombre() + ", Genero: " + personas[i].getGenero());
         }
-
     }
-}
+
+    public double returnPromedioEdad () {
+            double suma = 0;
+            for (int i = 1; i <= CANTIDAD_PERSONAS; i++) {
+                suma += personas[i].getEdad();
+            }
+            return suma / CANTIDAD_PERSONAS;
+
+        }
+    }
+
