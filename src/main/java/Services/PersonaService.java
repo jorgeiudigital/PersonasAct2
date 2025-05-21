@@ -39,13 +39,35 @@ public class PersonaService {
         }
     }
 
-    public double returnPromedioEdad () {
-            double suma = 0;
-            for (int i = 1; i <= CANTIDAD_PERSONAS; i++) {
-                suma += personas[i].getEdad();
-            }
-            return suma / CANTIDAD_PERSONAS;
-
+    public double returnPromedioEdad() {
+        double suma = 0;
+        for (int i = 1; i <= CANTIDAD_PERSONAS; i++) {
+            suma += personas[i].getEdad();
         }
+        return suma / CANTIDAD_PERSONAS;
+
     }
+
+    public void cantidadMaculino() {
+        int contador = 0;
+        for (int i = 1; i <= CANTIDAD_PERSONAS; i++) {
+            if (personas[i].getGenero().equalsIgnoreCase("masculino")) {
+                contador++;
+            }
+        }
+        System.out.println("Cantidad de personas de género masculino: " + contador);
+
+    }
+
+    public void cantidadFemenino() {
+        int contador = 0;
+        for (int i = 1; i <= CANTIDAD_PERSONAS; i++) {
+            if (personas[i].getGenero().equalsIgnoreCase("femenino")) {
+                contador++;
+            }
+        }
+        System.out.println("Cantidad de personas de género femenino: " + contador);
+    }
+
+}
 
